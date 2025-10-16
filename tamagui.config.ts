@@ -20,9 +20,11 @@ export const config = createTamagui({
     mono: defaultConfig.fonts?.mono ?? bodyFont,
   },
   tokens: {
+    ...tokens,
     ...defaultConfig.tokens,
   },
   themes: {
+    ...themes,
     ...defaultConfig.themes,
   }, // includes light & dark, plus color scales
   media: {
@@ -49,3 +51,5 @@ export type AppConfig = typeof config
 declare module '@tamagui/core' {
   interface TamaguiCustomConfig extends AppConfig {}
 }
+
+export default config

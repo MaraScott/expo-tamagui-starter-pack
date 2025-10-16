@@ -3,6 +3,8 @@ import { createExpoWebpackConfigAsync } from '@expo/webpack-config'
 export default async function (env, argv) {
   const config = await createExpoWebpackConfigAsync(env, argv)
 
+  config.output.publicPath = './';
+
   // ✅ Enable polling (good for WSL2, Docker, or network drives)
   config.watchOptions = {
     poll: 1000, // check every 1s

@@ -13,17 +13,30 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.marascott.vannes",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/img/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.marascott.vannes"
     },
     "web": {
-      "favicon": "./assets/img/favicon.png"
+      "favicon": "./assets/img/favicon.png",
+      "build": {
+        "baseUrl": "./"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1773ef39-a002-471b-a94b-2bfe4b7c3cf0"
+      }
     }
   }
 }
