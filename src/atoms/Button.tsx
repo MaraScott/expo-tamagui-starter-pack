@@ -1,6 +1,6 @@
 import { Button as TButton, styled } from 'tamagui'
 
-export const PillButton = styled(TButton, {
+export const Button = styled(TButton, {
   borderRadius: '$round',
   fontWeight: '700',
   bw: 1,

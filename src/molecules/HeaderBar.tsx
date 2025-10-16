@@ -1,6 +1,6 @@
 import { XStack, YStack, Spacer } from 'tamagui'
 import { Pill, PillText, StarIcon } from '@atoms/Pill'
-import { PillButton } from '@atoms/Button'
+import { Button as PillButton } from '@atoms/Button'
 import { GradientBadge, BadgeText } from '@atoms/Badge'
 import { Platform } from 'react-native'
 

@@ -1,20 +1,19 @@
 import React from 'react'
-import { TamaguiProvider, Theme, YStack, XStack, Paragraph, Text } from 'tamagui'
+import { TamaguiProvider, Theme, YStack, XStack, Paragraph, Text, getTokenValue } from 'tamagui'
 import { config } from '@app/tamagui.config'
 import { Container } from '@atoms/Container'
 import { Section } from '@atoms/Section'
 import { GlowH2, Muted } from '@atoms/Text'
 import { Card } from '@atoms/Card'
+import { Button } from '@atoms/Button'
 import { HeaderBar } from '@molecules/HeaderBar'
 import { Hero } from '@molecules/Hero'
 import { Grid2 } from '@molecules/Grid'
 import { Gallery } from '@molecules/Gallery'
+import { Map } from '@molecules/Map'
 import { BulletList, Yes } from '@organisms/FeatureList'
 
 import FrontImg from '@assets/img/front-20251014-100700-e111ef2b.png'
-
-import { MapContainer, TileLayer, useMap } from 'react-leaflet'
-const mapMarker = [47.65461526185612, -2.7522613448995985]
 
 export default function VannesIndex() {
     const [theme, setTheme] = React.useState<'dark' | 'light'>('dark')
@@ -141,20 +140,7 @@ export default function VannesIndex() {
                                 Zone géographique : <Text fontWeight="700">Secteur Le Jointo</Text>, Vannes (adresse exacte communiquée après réservation).
                             </Muted>
                             {/* Map placeholder: embed your Leaflet when on web; hide on print via CSS @media from your global styles if needed */}
-                            <YStack h={340} br="$sm" bw={1} borderColor="$line" ov="hidden" bc="$bg2" ai="center" jc="center">
-                                <MapContainer center={mapMarker} zoom={16} scrollWheelZoom={false}>
-                                    <TileLayer
-                                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                        maxZoom={19}
-                                    />
-                                    <Marker position={mapMarker}>
-                                        <Popup>
-                                            <Text fontWeight="700">Secteur Le Jointo</Text>, Vannes
-                                        </Popup>
-                                    </Marker>
-                                </MapContainer>
-                            </YStack>
+                            <Map center={[47.65461526185612, -2.7522613448995985]} height={340} zoom={16} popupText={`<strong>Secteur Le Jointo</strong>, Vannes`} />
                             <YStack display="none" id="map-print-placeholder">
                                 <Text>Carte – zone approximative Le Jointo, Vannes (visible en ligne)</Text>
                             </YStack>
@@ -191,7 +177,8 @@ export default function VannesIndex() {
                                     fontWeight="700"
                                     color="white"
                                     textDecorationLine="none"
-                                    style={{ backgroundImage: 'linear-gradient(90deg, var(--color-accent), var(--color-accent2))' }}
+                                    style={{ 
+                                        backgroundImage: `linear-gradient(90deg, ${getTokenValue('$accent')}, ${getTokenValue('$accent2')})` }}
                                 >
                                     Vérifier les disponibilités
                                 </Text>

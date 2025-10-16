@@ -15,22 +15,30 @@ const Grid = styled(XStack, {
       }),
 })
 
-const Shot = styled(Image, {
+const ShotFrame = styled(XStack, {
     width: '100%',
     height: 210,
-    objectFit: 'cover',
     borderRadius: 12,
     borderWidth: 1,
     borderColor: '#333333',
     borderStyle: 'solid',
-    overflow: 'hidden',    // ensures rounded corners render cleanly
+    overflow: 'hidden',
+})
+
+const ShotImage = styled(Image, {
+  width: '100%',
+  height: '100%',
+  flex: 1,
+  objectFit: 'cover',
 })
 
 export function Gallery({ images }: { images: { src: any; alt: string }[] }) {
   return (
     <Grid>
       {images.map((img, i) => (
-        <Shot key={i} source={{uri: img.src.uri, height: 210}} alt={img.alt} {...(!isWeb && { width: '32%' })}/>
+        <ShotFrame key={i} {...(!isWeb && { width: '32%' })}>
+          <ShotImage source={{ uri: img.src.uri, width: '100%' }} alt={img.alt} />
+        </ShotFrame>
       ))}
     </Grid>
   )

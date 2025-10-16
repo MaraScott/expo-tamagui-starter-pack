@@ -1,4 +1,4 @@
-import { Text, styled } from 'tamagui'
+import { Text, styled, getTokenValue } from 'tamagui'
 
 export const CTA = styled(Text, {
   as: 'a',
@@ -9,6 +9,6 @@ export const CTA = styled(Text, {
   color: 'white',
   textDecorationLine: 'none',
   style: {
-    backgroundImage: 'linear-gradient(90deg, var(--color-accent), var(--color-accent2))',
+    backgroundImage: `linear-gradient(90deg, ${getTokenValue('$accent')}, ${getTokenValue('$accent2')})`,
   },
 })

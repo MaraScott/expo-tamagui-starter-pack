@@ -33,7 +33,7 @@ export function Hero(props: { src: object; title: string; alt?: string }) {
   return (
     <HeroWrap>
       <Image
-        source={props.src}
+        source={{ uri: props.src.uri, width: '100%', height: 450 }}
         alt={props.alt ?? props.title}
       />
       <Overlay>

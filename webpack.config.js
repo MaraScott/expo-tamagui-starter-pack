@@ -21,6 +21,22 @@ export default async function (env, argv) {
       }
     })
   }
+  
+  config.module.rules.push({
+    test: /\.css$/i,
+    use: ['style-loader', 'css-loader'],
+  });
+  config.module.rules.push({
+    test: /\.(png|jpe?g|gif|svg)$/i,
+    type: 'asset', // lets webpack choose data-url vs file
+    parser: { dataUrlCondition: { maxSize: 10 * 1024 } },
+    generator: { filename: 'static/media/[name][ext]' },
+  });
+
+  config.resolve.alias = { 
+    ...(config.resolve.alias || {}), 
+    '@assets': path.resolve(__dirname, 'assets'), 
+  }
 
   // ✅ Enable polling (good for WSL2, Docker, or network drives)
   config.watchOptions = {
