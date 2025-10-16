@@ -1,7 +1,7 @@
 // src/templates/HomeTemplate.jsx
 import React from 'react'
 import { YStack } from 'tamagui'
-import Hero from '../Molecules/Hero'
+import Hero from '@molecules/Hero'
 
 export default function HomeTemplate() {
   return (

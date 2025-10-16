@@ -6,7 +6,11 @@
     "start": "expo start --tunnel",
     "android": "expo start --tunnel --android",
     "ios": "expo start --tunnel --ios",
-    "web": "expo start --tunnel --web"
+    "web": "expo start --tunnel --web",
+    "dev": "concurrently --raw -k -n EXPO -c green \"npm:start\"",
+    "dev:android": "concurrently --raw -k -n EXPO -c green \"npm:android\"",
+    "dev:ios": "concurrently --raw -k -n EXPO -c green \"npm:ios\"",
+    "dev:web": "concurrently --raw -k -n EXPO -c green \"npm:web\""
   },
   "dependencies": {
     "@expo/ngrok": "^4.1.3",
@@ -32,6 +36,7 @@
   "devDependencies": {
     "@tamagui/babel-plugin": "^1.135.2",
     "@tamagui/cli": "^1.135.2",
-    "@types/react": "~19.1.10"
+    "@types/react": "~19.1.10",
+    "concurrently": "^9.2.1"
   }
 }

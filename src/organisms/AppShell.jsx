@@ -1,7 +1,7 @@
 // src/organisms/AppShell.jsx
 import React from 'react'
 import { YStack } from 'tamagui'
-import ThemeToggleButton from '../Atoms/ThemeToggleButton'
+import ThemeToggleButton from '@atoms/ThemeToggleButton'
 
 export default function AppShell({ isDark, setIsDark, children }) {
   return (

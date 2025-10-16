@@ -1,12 +1,12 @@
 // src/index.js
-export { default as Title } from './Atoms/Title'
-export { default as Strong } from './Atoms/Strong'
-export { default as BodyText } from './Atoms/BodyText'
-export { default as ThemeToggleButton } from './Atoms/ThemeToggleButton'
+export { default as Title } from '@atoms/Title'
+export { default as Strong } from '@atoms/Strong'
+export { default as BodyText } from '@atoms/BodyText'
+export { default as ThemeToggleButton } from '@atoms/ThemeToggleButton'
 
-export { default as Hero } from './Molecules/Hero'
+export { default as Hero } from '@molecules/Hero'
 
-export { default as AppShell } from './Organisms/AppShell'
+export { default as AppShell } from '@organisms/AppShell'
 
-export { default as HomeTemplate } from './Templates/HomeTemplate'
-export { default as HomeScreen } from '.Pages/HomeScreen'
+export { default as HomeTemplate } from '@templates/HomeTemplate'
+export { default as HomeScreen } from '@pages/HomeScreen'

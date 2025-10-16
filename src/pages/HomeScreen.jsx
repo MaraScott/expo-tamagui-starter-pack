@@ -1,7 +1,7 @@
 // src/pages/HomeScreen.jsx
 import React from 'react'
-import AppShell from '../Organisms/AppShell'
-import HomeTemplate from '../Templates/HomeTemplate'
+import AppShell from '@organisms/AppShell'
+import HomeTemplate from '@templates/HomeTemplate'
 
 export default function HomeScreen({ isDark, setIsDark }) {
   return (

@@ -1,4 +1,22 @@
 {
-  "compilerOptions": {},
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "checkJs": false,
+    "strict": false,
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["./*"],
+      "@atoms/*": ["src/atoms/*"],
+      "@molecules/*": ["src/molecules/*"],
+      "@organisms/*": ["src/organisms/*"],
+      "@templates/*": ["src/templates/*"],
+      "@pages/*": ["src/pages/*"]
+    }
+  },
+  "include": ["src", "App.tsx", "tamagui.config.ts"],
+  "exclude": ["node_modules"],
   "extends": "expo/tsconfig.base"
 }

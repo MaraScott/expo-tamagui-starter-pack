@@ -2,8 +2,8 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { TamaguiProvider, Theme } from 'tamagui'
-import { config } from './tamagui.config'
-import HomeScreen from './src/Pages/HomeScreen'
+import { config } from '@app/tamagui.config'
+import HomeScreen from '@pages/HomeScreen'
 
 export default function App() {
   const [isDark, setIsDark] = React.useState(true)

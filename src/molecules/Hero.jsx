@@ -1,9 +1,9 @@
 // src/molecules/Hero.jsx
 import React from 'react'
 import { YStack } from 'tamagui'
-import Title from '../Atoms/Title'
-import Strong from '../Atoms/Strong'
-import BodyText from '../Atoms/BodyText'
+import Title from '@atoms/Title'
+import Strong from '@atoms/Strong'
+import BodyText from '@atoms/BodyText'
 
 export default function Hero() {
   return (
