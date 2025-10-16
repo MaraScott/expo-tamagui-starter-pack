@@ -1,21 +1,46 @@
-// src/molecules/Hero.jsx
-import React from 'react'
-import { YStack } from 'tamagui'
-import Title from '@atoms/Title'
-import Strong from '@atoms/Strong'
-import BodyText from '@atoms/BodyText'
+import { YStack, styled, Text, Image as TImage } from 'tamagui'
 
-export default function Hero() {
+const HeroWrap = styled(YStack, {
+  my: 18,
+  br: '$lg',
+  ov: 'hidden',
+  bc: '#0F1532',
+  bw: 1,
+  borderColor: '$line',
+  position: 'relative',
+  h: 'auto',
+})
+
+const Overlay = styled(YStack, {
+  position: 'absolute',
+  t: 0, l: 0, r: 0, b: 0,
+  ai: 'flex-start',
+  jc: 'flex-end',
+  px: 20, py: 20,
+  // web gradient overlay
+  style: {
+    background: 'linear-gradient(180deg, rgba(5,10,20,0), rgba(5,10,20,.75) 65%, rgba(5,10,20,.9))',
+  },
+})
+
+const Image = styled(TImage, {
+  position: 'relative',
+  width: '100%',
+  height: 'auto',
+})
+
+export function Hero(props: { src: object; title: string; alt?: string }) {
   return (
-    <YStack ai="center" jc="center" space="$4">
-      <Title>Your Custom Tamagui Config</Title>
-      <BodyText>
-        Tokens, themes, fonts, shorthands, and defaults are now controlled by{' '}
-        <BodyText>
-          <Strong>tamagui.config.ts</Strong>
-        </BodyText>
-        .
-      </BodyText>
-    </YStack>
+    <HeroWrap>
+      <Image
+        source={props.src}
+        alt={props.alt ?? props.title}
+      />
+      <Overlay>
+        <Text fontSize={38} lineHeight={44} color="$glow" fontWeight="700">
+          {props.title}
+        </Text>
+      </Overlay>
+    </HeroWrap>
   )
 }

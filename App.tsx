@@ -5,6 +5,7 @@ import { TamaguiProvider, Theme } from 'tamagui'
 import { config } from '@app/tamagui.config'
 import HomeScreen from '@pages/HomeScreen'
 import IndexPhp from '@pages/IndexPhp'
+import VannesIndex from '@pages/VannesIndex'
 
 export default function App() {
   const [isDark, setIsDark] = React.useState(true)
@@ -12,7 +13,7 @@ export default function App() {
   return (
     <TamaguiProvider config={config}>
       <Theme name={isDark ? 'dark' : 'light'}>
-        <IndexPhp />
+        <VannesIndex />
       </Theme>
     </TamaguiProvider>
   )
